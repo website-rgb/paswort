@@ -1,26 +1,9 @@
-const STORED_HASH =
-"08935eb36d93610c3d4a04d55b881352e69747970790aa2db6f7b949fa6b2edc";
-
-const SALT = "xA9!_§2026_secret";
-
-async function hashPassword(password) {
-let data = new TextEncoder().encode(password + SALT);
-
-for (let i = 0; i < 100000; i++) {
-data = await crypto.subtle.digest("SHA-256", data);
-data = new Uint8Array(data);
-}
-
-return Array.from(data)
-.map(b => b.toString(16).padStart(2, "0"))
-.join("");
-}
+const STORED_PASSWORD = "passwort";
 
 async function login() {
 const input = document.getElementById("pw").value;
-const hash = await hashPassword(input);
 
-if (hash === STORED_HASH) {
+if (input === STORED_PASSWORD) {
 window.location.href = "secret.html";
 } else {
 alert("Falsches Passwort");
