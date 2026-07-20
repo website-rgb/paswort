@@ -1,6 +1,5 @@
-
 const STORED_HASH =
-"passwort";
+"08935eb36d93610c3d4a04d55b881352e69747970790aa2db6f7b949fa6b2edc";
 
 const SALT = "xA9!_§2026_secret";
 
@@ -27,5 +26,3 @@ window.location.href = "secret.html";
 alert("Falsches Passwort");
 }
 }
-
-
